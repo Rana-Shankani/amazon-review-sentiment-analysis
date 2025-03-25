@@ -24,19 +24,21 @@ A deep learning-based sentiment analysis system that classifies Amazon product r
 ```
 amazon-review-sentiment-analysis/
 │
-├── notebooks/
-│   └── model_development.ipynb    # Exploratory analysis and model development
-│
 ├── src/
-│   ├── init.py
-│   ├── data_processing.py         # Functions for loading and processing review data
-│   ├── model.py                   # Model definition and training functions
-│   └── evaluation.py              # Functions for model evaluation and visualization
+│   ├── __init__.py
+│   ├── data_processing.py    # Functions for loading and processing review data
+│   ├── model.py              # Model definition and training functions
+│   └── evaluation.py         # Functions for model evaluation and visualization
 │
-├── app.py                         # Simple demo application
-├── requirements.txt               # Project dependencies
-├── README.md                      # Project documentation
-└── .gitignore                     # Git ignore file
+├── scripts/
+│   ├── train.py              # Script to train the model
+│   └── evaluate.py           # Script to evaluate model performance
+│
+├── app.py                    # Simple demo application
+├── main.py                   # Main entry point for running the pipeline
+├── requirements.txt          # Project dependencies
+├── README.md                 # Project documentation
+└── .gitignore                # Git ignore file
 ```
 
 
