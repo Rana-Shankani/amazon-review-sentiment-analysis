@@ -68,8 +68,11 @@ def load_data(file_path=None, use_huggingface=True, sample_size=None):
         test_df = pd.DataFrame(dataset['test'])
         
         # Map stars to sentiment categories (1-2: negative, 3: neutral, 4-5: positive)
-        train_df['sentiment'] = train_df['label'].apply(lambda x: 0 if x <= 2 else (1 if x == 3 else 2))
-        test_df['sentiment'] = test_df['label'].apply(lambda x: 0 if x <= 2 else (1 if x == 3 else 2))
+        # train_df['sentiment'] = train_df['label'].apply(lambda x: 0 if x <= 2 else (1 if x == 3 else 2))
+        # test_df['sentiment'] = test_df['label'].apply(lambda x: 0 if x <= 2 else (1 if x == 3 else 2))
+
+        train_df['sentiment'] = train_df['label'].apply(lambda x: 0 if x <= 1 else (1 if x == 2 else 2))
+        test_df['sentiment'] = test_df['label'].apply(lambda x: 0 if x <= 1 else (1 if x == 2 else 2))
         
         # Limit sample size if specified
         if sample_size:
